@@ -1,0 +1,38 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="majorIncident">
+            <h2><span jhiTranslate="test1App.majorIncident.detail.title">Major Incident</span> {{ majorIncident.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="test1App.majorIncident.code">Code</span></dt>
+                <dd>
+                    <span>{{ majorIncident.code }}</span>
+                </dd>
+                <dt><span jhiTranslate="test1App.majorIncident.description">Description</span></dt>
+                <dd>
+                    <span>{{ majorIncident.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="test1App.majorIncident.source">Source</span></dt>
+                <dd>
+                    <span>{{ majorIncident.source }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/major-incident', majorIncident.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
