@@ -1,0 +1,5 @@
+entity MajorIncident {
+	code String required
+    description String
+    source String
+}
